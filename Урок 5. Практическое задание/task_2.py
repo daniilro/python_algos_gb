@@ -15,13 +15,14 @@
 import collections
 import functools
 
+
 ################################################################
 def calculate():
     nums = collections.defaultdict(list)
 
     for num in range(2):
-        n = input(f"Enter {num+1} hexadecimal number: ")
-        nums[f"{num+1}-{n}"] = list(n)
+        n = input(f"Enter {num + 1} hexadecimal number: ")
+        nums[f"{num + 1}-{n}"] = list(n)
     print(nums)
 
     summ = sum([int(''.join(i), 16) for i in nums.values()])
@@ -31,6 +32,7 @@ def calculate():
 
     mult = functools.reduce(lambda a, b: a * b, [int(''.join(i), 16) for i in nums.values()])
     print("Произведение: ", list('%X' % mult))
+
 
 ################################################################
 calculate()
